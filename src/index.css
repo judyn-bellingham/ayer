@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-navy-950 text-navy-50 font-sans;
+    overscroll-behavior-y: none;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-navy-900/40 backdrop-blur-xl border border-white/10;
+  }
+  .glass-strong {
+    @apply bg-navy-800/60 backdrop-blur-2xl border border-white/15;
+  }
+  .glass-card {
+    @apply bg-navy-800/50 backdrop-blur-xl border border-white/10 rounded-3xl;
+  }
+  .gold-text {
+    @apply text-gold-400;
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #f4df99 0%, #e9b433 50%, #bc7c16 100%);
+  }
+  .navy-gradient {
+    background: linear-gradient(180deg, #0d1828 0%, #070f1c 100%);
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, #152234 0%, #1e2d45 50%, #152234 100%);
+    background-size: 1000px 100%;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar for desktop */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(233, 180, 51, 0.3);
+  border-radius: 3px;
+}
